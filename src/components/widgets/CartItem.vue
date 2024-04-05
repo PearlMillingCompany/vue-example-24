@@ -1,8 +1,13 @@
 <template>
     <div class="cart-item">
-      <img :src="'/path/to/images/' + item.image" :alt="item.name">
-      <div>{{ item.name }}</div>
+      <img :src="item.image" :alt="item.name">
+      <div>{{ item.name }}</div> 
+      
       <div>{{ item.value }}</div>
+      <button @click = "$emit('addFunc', item.name, item.value)">Add to Cart</button>
+    </div>
+    <div id="cart" >
+
     </div>
   </template>
   
@@ -25,5 +30,6 @@
     height: 50px; 
     margin-right: 10px;
   }
+  
   </style>
   
