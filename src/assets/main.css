@@ -1,26 +1,3 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  color: var(--color-text);
-}
-
-a {
-  color: var(--color-heading);
-  text-decoration: none;
-  transition: opacity 0.5s;
-}
-
-h1 {
-  font-size: 4rem;
-  color: var(--color-heading);
-}
-
-@media (hover: hover) {
-  a:hover {
-    opacity: 60%;
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1b7e2b63cebde2419f32a7ec18ffa26b97d5c735cb54ba82f9d1fd583b659d96
+size 349

@@ -1,36 +1,3 @@
-<script>
-export default {
-    props: {
-        // will display timestamp to 
-        timestamp: {
-            type: String,
-            required: true
-        }
-    },
-    computed: {
-        // convert the timestamp to a human readable format
-        convertTimestamp: function () {
-            // from https://www.builder.io/blog/relative-time
-            const timeMs = typeof this.timestamp === "number" ? this.timestamp : new Date(this.timestamp).getTime();
-            // Get the amount of seconds between the given date and now
-            const deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
-            // Array reprsenting one minute, hour, day, week, month, etc in seconds
-            const cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
-            // Array equivalent to the above but in the string representation of the units
-            const units = ["second", "minute", "hour", "day", "week", "month", "year"];
-            // Grab the ideal cutoff unit
-            const unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
-            // Get the divisor to divide from the seconds. E.g. if our unit is "day" our divisor
-            // is one day in seconds, so we can divide our seconds by this to get the # of days
-            const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
-
-            // Intl.RelativeTimeFormat do its magic
-            const rtf = new Intl.RelativeTimeFormat('en', { numeric: "auto" });
-            return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
-        }
-    }
-}
-</script>
-<template>
-    <div>{{ convertTimestamp }} </div>
-</template>
+version https://git-lfs.github.com/spec/v1
+oid sha256:d732125b474ea05e89cac49030304b5c4b8c185188f4e6829360e2fefd2cb2b3
+size 1667

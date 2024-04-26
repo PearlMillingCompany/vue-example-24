@@ -1,16 +1,3 @@
-
-# data for a match preview component called a "LiveScore Match" 
-<img src="https://images.fotmob.com/image_resources/logo/teamlogo/eng.png" class="Image CountryIcon " alt="" width="20" height="20" loading="lazy">
-away:
-{id: "8456", name: "Manchester City", shortName: "M…}
-
-date: "Sunday, November 12, 2023"
-home:
-{id: "8455", name: "Chelsea", shortName: "Chelsea"}
-id:"4193574"
-pageUrl:
-"/matches/chelsea-vs-manchester-city/2d55kw#4193574"
-round:
-12
-roundName:
-12
+version https://git-lfs.github.com/spec/v1
+oid sha256:8f94f57b0c6f843bfcb93bc32e68b245d7a005ee10dd624d0dcc8ab88806b50e
+size 467
