@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:caa64b11b3d59d2955f0cccef2054f42ab40cfab1ac4bfdb73781d657453d102
-size 117
+import './assets/main.css'
+import App from './App.vue'
+import { createApp } from 'vue'
+
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+// Cors
+
+import cors from 'cors'
+
+// Components
+
+const vuetify = createVuetify({
+  components,
+  directives,
+})
+
+createApp(App).use(vuetify).mount('#app')
+/// have to add cors some howd

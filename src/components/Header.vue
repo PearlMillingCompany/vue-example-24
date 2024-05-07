@@ -9,7 +9,18 @@ export default {
 
         }
     },
-    components: { Dropdown }
+    components: { Dropdown },
+    methods: {
+           search() {
+               axios.get(`http://localhost:3000/search?query=${this.searchText}`)
+                   .then(response => {
+                       console.log(response.data); // Handle your search results here
+                   })
+                   .catch(error => {
+                       console.error('Error fetching data: ', error);
+                   });
+           }
+}
 }
 </script>
 
