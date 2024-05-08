@@ -1,6 +1,7 @@
 <script>
 import Dropdown from './widgets/Dropdown.vue';
-
+import axios from 'axios';
+import search from './Search.vue';
 
 export default {
     data() {
@@ -9,17 +10,9 @@ export default {
 
         }
     },
-    components: { Dropdown },
+    components: { Dropdown, search },
     methods: {
-           search() {
-               axios.get(`http://localhost:3000/search?query=${this.searchText}`)
-                   .then(response => {
-                       console.log(response.data); // Handle your search results here
-                   })
-                   .catch(error => {
-                       console.error('Error fetching data: ', error);
-                   });
-           }
+        
 }
 }
 </script>
@@ -30,7 +23,7 @@ export default {
             <img alt="Vue logo" class="logo" src="../assets/logo.svg" />
         </a>
         <div class="search-bar">
-            <input type="text" placeholder="Search" v-model="searchText" @input="search">
+            <search></search>
         </div>
         <div class="header-links">
             <!-- 5. change all href sources to start with /#/. You will have to do it for dropdown as well. -->

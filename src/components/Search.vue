@@ -3,7 +3,9 @@
       <input type="text" v-model="query" placeholder="Search...">
       <button @click="search">Search</button>
       <ul>
-        <li v-for="result in searchResults" :key="result.id">{{ result.name }}</li>
+        <li v-for="result in searchResults" :key="result.id">
+            result: {{ result.player_name }}</li>
+            {{ searchResults.player_name  }}
       </ul>
     </div>
   </template>
@@ -28,6 +30,7 @@
           })
           .then(data => {
             this.searchResults = data;
+            console.log(data);
           })
           .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);

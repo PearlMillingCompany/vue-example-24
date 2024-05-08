@@ -1,6 +1,6 @@
 import path from "path";
 import sqlite from "sqlite3";
-const dbFile = path.join("database.sqlite");
+const dbFile = path.join("backend", "database.sqlite");
 const db = new sqlite.Database(dbFile, (error) => {
     if (error) return console.error(error.message);
     console.log(`Connected to database ${dbFile}`);
@@ -94,20 +94,21 @@ export const getLeagueById = (req, res) => {
     });
 };
 
-
-export const getPlayerByName = app.get('/search', (req, res) => {
+export const getPlayerByName = (req, res) => {
     const { query } = req.query;
-    const sql = `SELECT * FROM players WHERE name LIKE ?`;
+    const sql = `SELECT * FROM Player WHERE player_name LIKE ?`;
     const values = [`%${query}%`];
-    connection.query(sql, values, (err, results) => {
+    db.all(sql, values, (err, results) => {
         if (err) {
             console.error('Error executing query:', err);
             res.status(500).json({ error: 'Internal server error' });
             return;
         }
-        res.json(results);
+        res.json(results.splice(0,11));
+        
     });
-});
+  };
+
 
 
 
