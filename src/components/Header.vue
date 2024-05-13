@@ -23,7 +23,7 @@ export default {
             <img alt="Vue logo" class="logo" src="../assets/logo.svg" />
         </a>
         <div class="search-bar">
-            <search></search>
+           <search></search> 
         </div>
         <div class="header-links">
             <!-- 5. change all href sources to start with /#/. You will have to do it for dropdown as well. -->

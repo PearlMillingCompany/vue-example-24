@@ -75,24 +75,7 @@ export const getCountryById = (req, res) => {
 };
 
 
-export const getLeagueById = (req, res) => {
-    const leagueId = parseInt(req.params.id);
-    const query = `SELECT * FROM League`;
 
-    db.get(query, [leagueId], (error, results) => {
-        if (error) {
-            console.error(error.message);
-            res.status(400).json({ error: error.message });
-            return;
-        }
-
-        if (result) {
-            res.json(result);
-        } else {
-            res.sendStatus(404);
-        }
-    });
-};
 
 export const getPlayerByName = (req, res) => {
     const { query } = req.query;

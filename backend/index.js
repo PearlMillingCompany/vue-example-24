@@ -31,8 +31,6 @@ app.get("/team/:id", db.getTeamById);
 //get individual country
 app.get("/country/:id", db.getCountryById);
 
-//get individual league
-app.get("/league/:id", db.getLeagueById);
 
 app.get("/search", db.getPlayerByName);
 
