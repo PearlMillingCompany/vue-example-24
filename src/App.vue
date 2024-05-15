@@ -36,8 +36,12 @@ export default {
 
 <template>
   <Header />
+  <!-- <RouterLink to="/news">Go to news</RouterLink>  -->
   <!-- 4. Change this to be a dynamic component -->
-  <component :is="currentPath" />
+  <!-- <component :is="currentPath" /> -->
+  <RouterView>
+
+  </RouterView>
   <Footer />
 </template>
 

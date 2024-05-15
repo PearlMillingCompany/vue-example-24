@@ -1,6 +1,7 @@
 <script>
 import PlayerItem from "../widgets/PlayerItem.vue";
 
+
 export default {
 
     data() {
