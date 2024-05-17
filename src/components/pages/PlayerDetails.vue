@@ -7,12 +7,7 @@ export default {
     data() {
         return {
             PlayerData: {
-                id: 1,
-                player_fifa_api_id: 11,
-                player_name: "fg" ,
-                birthday: "gh" ,
-                height: 1,
-                weight: 1
+                
             }
         }
     },
@@ -24,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <p> TEST</p>
+    <p> TEST {{ $route.params.player_name}}</p>
 <PlayerItem> </PlayerItem>
 </template>
 

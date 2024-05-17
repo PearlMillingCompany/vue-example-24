@@ -6,7 +6,7 @@
         <button @click="search">Search</button>
         <ul>
             <li v-for="result in searchResults" :key="result.id">
-                <RouterLink to='/playerDetails/{{result.player_name}}'></RouterLink>
+                <RouterLink :to="`/playerDetails/${result.player_name}`">{{ result.player_name }}</RouterLink>
                 <!-- <a @click="redirect('id', 'player_api_id', 'player_name', 'birthday', 'height', 'weight')">result: {{
                     result.player_name }}</a> -->
             </li>
@@ -39,10 +39,6 @@ export default {
                 console.error('There has been a problem with your fetch operation:', error);
             }
         },
-        redirect(id, player_api_id, player_name, birthday, height, weight) {
-            const href = `./#/pages/PlayerDetails.vue?id=${id}&player_api_id=${player_api_id}&player_name=${encodeURIComponent(player_name)}&birthday=${birthday}&height=${height}&weight=${weight}`;
-            window.location.href = href;
-        }
     },
     components: { RouterLink }
 };
