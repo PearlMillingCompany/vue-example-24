@@ -10,8 +10,8 @@ const db = new sqlite.Database(dbFile, (error) => {
 
 export const getPlayerById = (req, res) => {
 
-    const playerId = parseInt(req.params.id);
-    const query = `SELECT * FROM Player WHERE id = ?`;
+    const playerId = parseInt(req.params.name);
+    const query = `SELECT * FROM Player WHERE player_name = ?`;
 
     db.get(query, [playerId], (error, result) => {
         if (error) {
@@ -21,6 +21,7 @@ export const getPlayerById = (req, res) => {
         }
 
         if (result) {
+            console.log("working")
             res.json(result);
         } else {
             res.sendStatus(404);
